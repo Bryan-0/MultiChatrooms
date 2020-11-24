@@ -1,0 +1,120 @@
+* {
+    background-color: black;
+}
+
+.title {
+    text-align: center;
+    color: white;
+}
+
+p {
+    background-color: black;
+}
+
+.inputSection {
+    text-align: center;
+    color: white;
+}
+
+.chatrooms {
+    justify-content: center;
+    text-align: center;
+    background-color: black;
+    padding: 10px;
+}
+
+#space {
+    background-color: lightgray;
+}
+
+#userName {
+    color: white;
+    border-radius: 10px;
+    background-color: black;
+}
+
+#enterButton {
+    color: white;
+}
+
+#errorMessages {
+    color: red;
+}
+
+#chatNavBar {
+    color: white;
+    padding: 10px;
+}
+
+#leaveButton {
+    margin-left: 10px;
+    color: white;
+    border-radius: 10px;
+}
+
+#leaveButton:hover {
+    box-shadow: 1px 1px 1px red;
+}
+
+.roomButton {
+    border-radius: 10px;
+    width: 100%;
+    color: white;
+}
+
+#inputMessage {
+    width: 900px;
+    background-color: lightgray;
+    color: black;
+    box-shadow: 1px 1px 1px lightcyan;
+}
+
+.roomButton:hover {
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+#leaveButton:focus, #userName:focus, .roomButton:focus, #inputMessage:focus {
+    outline: none;
+}
+
+table, td, th {
+    padding: 5px;
+    width: 50%;
+    font-size: 25px;
+    text-align: center;
+    color: white;
+    
+}
+
+.chatroomsContainer {
+    display: none;
+}
+
+.chatMessages {
+    display: flex;
+    text-align: center;
+    width: 900px;
+    height: 500px;
+    background-color: lightgray;
+    box-shadow: 1px 1px 1px lightcyan;
+}
+
+
+.usersContainer {
+    width: 200px;
+    height: 500px;
+    background-color: lightgray;
+}
+
+.fix {
+    margin-top: -60px;
+}
+
+.chatFix {
+    margin-left: -200px;
+}
+
+.userListFix {
+   
+}

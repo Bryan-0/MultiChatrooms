@@ -3,15 +3,33 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Template</title>
+    <title>Index</title>
     <link rel="icon" href="" type="image/icon type">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href="/templates/css/style.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+    <div class="title">
+        <h1> Multichatrooms </h1>
+    </div>
+    <p id="space"></p>
+    <div class="inputSection">
+        <h5> Type a name in order to enter chatrooms section: </h5>
+        <br>
+        <form id="goForm" action="/chats" method="post">
+            <label for="userName">Username: </label>
+            <input type="text" name="userName" id="userName"> 
+            <br><br>
+            <input type="button" onclick="String(document.getElementById('userName').value).length >= 3 ? document.getElementById('goForm').submit() : document.getElementById('errorMessages').textContent = 'Please use a valid name. (Needs to be longer than 2 characters)'" value="Enter chatrooms" id="enterButton">
+            <br>
+        </form>
+        <small id="errorMessages"></small>
+    </div>
+
 </body>
 
 </html>

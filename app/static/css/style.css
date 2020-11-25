@@ -74,7 +74,7 @@ p {
     box-shadow: 3px 3px 3px lightgray;
 }
 
-#leaveButton:focus, #userName:focus, .roomButton:focus, #inputMessage:focus {
+#leaveButton:focus, #userName:focus, .roomButton:focus, #inputMessage:focus, #reloadChatrooms:focus {
     outline: none;
 }
 
@@ -87,13 +87,11 @@ table, td, th {
     
 }
 
-.chatroomsContainer {
+.chatContainer {
     display: none;
 }
 
 .chatMessages {
-    display: flex;
-    text-align: center;
     width: 900px;
     height: 500px;
     background-color: lightgray;
@@ -104,7 +102,7 @@ table, td, th {
 .usersContainer {
     width: 200px;
     height: 500px;
-    background-color: lightgray;
+    background-color: gray;
 }
 
 .fix {
@@ -116,5 +114,31 @@ table, td, th {
 }
 
 .userListFix {
-   
+   margin-left: 900px;
+   margin-top: -500px;
+}
+
+#userListTitle {
+    background-color: gray;
+    color: white;
+}
+
+#usersConnected {
+    background-color: gray;
+    color: white;
+}
+
+#innerMessages {
+    font-size: 18px;
+    padding: 5px;
+    width: 900px;
+    height: 500px;
+    text-align: left;
+    background-color: lightgray; 
+}
+
+#reloadChatrooms {
+    background-color: black;
+    color: white;
+    box-shadow: 2px 2px 2px lime;
 }

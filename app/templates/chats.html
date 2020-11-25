@@ -13,14 +13,17 @@
     <nav id="chatNavBar">
         <small>Logged as {{ userName }}</small>
     </nav>
-    <div class="chatroomsContainer">
+    <div id="chatroomsContainer" class="chatroomsContainer">
         <div class="title">
-            <h1> Chatrooms </h1>
+            <h1> Chatrooms List: </h1>
         </div>
         <p></p>
         <div class="chatrooms">
             <center>
-                <small style="color: white;">(click to join any chatroom)</small>
+                <button onclick="location.reload()" id="reloadChatrooms">Reload Chatrooms</button>
+                <br>
+                <small style="color: white;">(click chatroom name to enter)</small>
+                <br><br>
                 <table id="chatroomTable">
                     <thead>
                         {% for room in rooms %}
@@ -34,7 +37,7 @@
         </div>
     </div>
 
-    <div class="chatContainer">
+    <div id="chatContainer" class="chatContainer">
         <button onclick="LeaveChatRoom()" id="leaveButton">Leave</button>
         <div class="fix">
             <div class="title">
@@ -43,11 +46,18 @@
             <center>
                 <div class="chatFix">
                     <div class="chatMessages">
+                        <div id="innerMessages">
+                        </div>
+                        
                         <div class="userListFix">
                             <div class="usersContainer">
-                                
+                                <h3 id="userListTitle">Users</h3>
+                                <p></p>
+                                <h5 id="usersConnected">
+                                </h5>
                             </div>
                         </div>
+                        
                     </div>
                     <input type="text" name="inputMessage" id="inputMessage">
                 </div>
@@ -60,6 +70,22 @@
     <script type="text/javascript" charset="utf-8">
         var socket = io();
         setUserData("{{ userName }}")
+
+        socket.on('getUsersList', (data) => {
+            getUsersConnected(data);
+        });
+
+        socket.on('updateRoomUserList', (data) => {
+            updateRoomList(data);
+        });
+
+        socket.on('showMessage', (data) => {
+            showMessage(data);
+        });
+
+        socket.on('commandResponse', (data) => {
+            commandResponse(data);
+        });
     </script>
 </body>
 </html>

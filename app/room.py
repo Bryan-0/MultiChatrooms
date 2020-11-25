@@ -8,6 +8,9 @@ class Room:
         self.colorList = ["red", "green", "blue", "purple", "maroon"]
     
     def setRandomColor(self):
+        """
+        Returns a random color from color list.
+        """
         return random.choice(self.colorList)
     
     def readRooms(self):
@@ -61,11 +64,20 @@ class Room:
                 f.write(f"{room}\n")
     
     def readRoomInformation(self, roomToRead):
+        """
+        Returns information of an especific room.
+        """
         return self.roomInformation[roomToRead]
     
     def addUserToRoom(self, roomName, userName, userColor):
+        """
+        Appends a new user to an especific room.
+        """
         self.roomInformation[roomName]['usersConnected'].append({'userName': userName, 'userColor': userColor})
     
     def removeUserFromRoom(self, roomName, userName, userColor):
+        """
+        Removes an user from an especific room.
+        """
         self.roomInformation[roomName]['usersConnected'].remove({'userName': userName, 'userColor': userColor})
     
